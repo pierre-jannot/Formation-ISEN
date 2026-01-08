@@ -1,10 +1,13 @@
 /* Document style pour la page index.html */
 
 /* Mise en forme des titres et paragraphes */
-header {
+head, body{
     font-family: "Ubuntu", sans-serif;
-    font-weight: 700;
     font-style: normal;
+}
+
+header {
+    font-weight: 700;
     text-align: left;
     font-size: 40px;
     padding-top: 50px;
@@ -12,39 +15,27 @@ header {
     color: #2C7057;
 }
 
-h1 {
-    font-family: "Ubuntu", sans-serif;
+h1, h3 {
     font-weight: 500;
-    font-style: normal;
     color:#2C7057;
 }
 
 h2{
-    font-family: "Ubuntu", sans-serif;
     font-weight: 400;
-    font-style: normal;
     text-decoration: underline;
 }
 
 h3{
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 500;
-    font-style: normal;
     font-size: 20px;
     text-align: justify;
-    color:#2C7057;
 }
 
 p{
-    font-family: "Ubuntu", sans-serif;
     font-weight: 300;
-    font-style: normal;
 }
 
 ul{
-    font-family: "Ubuntu", sans-serif;
     font-weight: 300;
-    font-style: normal;
     text-align: justify;
 }
 
@@ -129,6 +120,7 @@ body.visible{
 
 /* Mise en forme du conteneur général, permet l'affichage en grille */
 .conteneur{
+    display: flex;
     display: grid;
     grid-template-columns: 600px 600px;
     width: 1200px;
