@@ -48,6 +48,51 @@ ul{
     text-align: justify;
 }
 
+/* Animation de fondu et déplacement progressif des éléments*/
+@keyframes fadeInY {
+    to {opacity: 1;
+    transform: translateY(0)}
+}
+
+@keyframes fadeInX {
+    to {opacity: 1;
+    transform: translateX(0)}
+}
+
+body.visible{
+    opacity: 1;
+}
+
+.anim{
+    opacity: 0;
+}
+
+.anim_1{
+    animation: fadeInY 1s forwards;
+    transform: translateY(20px);
+    animation-delay: 0s;
+}
+
+.anim_2{
+    animation: fadeInY 1s forwards;
+    transform: translateY(20px);
+    animation-delay: 0.5s;
+}
+
+.anim_3{
+    opacity: 0;
+    animation: fadeInX 1s forwards;
+    transform: translateX(20px);
+    animation-delay: 1s;
+}
+
+.anim_4{
+    opacity: 0;
+    animation: fadeInX 1s forwards;
+    transform: translateX(20px);
+    animation-delay: 1.5s;
+}
+
 /* Mise en forme de la partie présentation (conteneur de tête et parcours) */
 .presentation{
     max-width: 1100px;
