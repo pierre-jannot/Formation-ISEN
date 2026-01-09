@@ -39,7 +39,7 @@ ul{
     text-align: justify;
 }
 
-/* Animation de fondu et déplacement progressif des éléments*/
+/* Animation de fondu et déplacement progressif des éléments */
 @keyframes fadeInY {
     to {opacity: 1;
     transform: translateY(0)}
@@ -84,9 +84,14 @@ body.visible{
     animation-delay: 1.5s;
 }
 
+body{
+    margin: 0 auto;
+    max-width: 1100px;
+    min-width: 600px;
+}
+
 /* Mise en forme de la partie présentation (conteneur de tête et parcours) */
 .presentation{
-    max-width: 1100px;
     margin: 0 0;
     text-align: justify;
     padding: 20px;
@@ -112,26 +117,37 @@ body.visible{
     display: block;
 }
 
-/* Alignement et réduction de la taille max du paragraphe de parcours */
-.parcours{
-    max-width: 1200px;
-    margin: 0 0;
-}
-
 /* Mise en forme du conteneur général, permet l'affichage en grille */
 .conteneur{
-    display: flex;
     display: grid;
-    grid-template-columns: 600px 600px;
-    width: 1200px;
-    margin: 0 0;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    margin: 0 auto;
     gap: 30px;
+    padding: 20px;
+}
+
+@media (max-width: 1000px){
+    .conteneur{
+        display: flex;
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 600px;
+        margin: 0 0;
+        gap: 30px;
+    }
 }
 
 /* Classe bloc permettant de réunir des éléments dans une même case de la grille des conteneurs */
 .bloc{
-    max-width: 600px;
     margin: 0 0;
+}
+
+/* Input au bas de la page, prend toute la largeur */
+.input{
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 20px;
 }
 
 /* Création d'un fond pour le cadre d'expériences */
@@ -150,4 +166,7 @@ body.visible{
     color: white;
 }
 
-
+.input{
+    max-width: 1200px;
+    align-content: center;
+}

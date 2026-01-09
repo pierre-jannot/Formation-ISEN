@@ -11,7 +11,7 @@
         <!--Application du style css-->
         <link href="styles/style.css" rel="stylesheet" />
         <!--Nom de la page-->
-        <title> Portfolio Pierre Jannot </title>
+        <title id="titre"></title>
     </head>
 
     <body>
@@ -20,35 +20,19 @@
 
                 <!--Photo de profil-->
                 <div class="head_conteneur">
-                    <div class="photo">
-                        <img src="images/profil.jpg"
-                        alt="Image de profil"
-                        width="100px">
+                    <div class="photo" id="img_profil">
                     </div>
 
-                    <!--Titre de la page-->
-                    <header>Pierre Jannot</header>
+                    <!--Nom Prénom-->
+                    <header id="identité"></header>
                 </div>
 
                 <!--Statut-->
-                <h3>Ingénieur en Biotechnologies et e-Santé<br>Apprenant en Intelligence Artificielle</h1>                   
+                <h3 id="statut"></h3>                   
             </div>
 
-            <!--Début contenu de la page-->
-            <div class="parcours anim anim_2">
-                <p>
-                    Issu d'une classe préparatoire au Lycée Rouvière et de l'école d'ingénieur ESIEE Paris,
-                    je me suis formé dans le domaine de la Biotechnologie et de l'e-Santé en vue d'améliorer la prise en
-                    charge de patients dans le milieu médical.
-                </p>
-                <p>
-                    Cette formation m'a permis d'obtenir des compétences dans la programmation Python, R, Java et C++ ainsi
-                    que le traitement du signal et de l'image avec Matlab. Suite à cette formation, j'ai pu poursuivre mon
-                    stage de fin d'études en tant qu'ingénieur en Traitement du Signal au sein de l'ENSOSP à Aix-en-Provence
-                    où j'ai pu développer mes compétences dans le traitement du signal. De plus, depuis 2017, je suis
-                    réserviste militaire pour la Marine Nationale, ce qui m'a permis de travailler sur mon autonomie et sur
-                    la gestion d'équipes.
-                </p>
+            <!--Parcours-->
+            <div class="parcours anim anim_2" id="parcours">
             </div>
         </div>
 
@@ -56,61 +40,23 @@
 
             <!--Bloc des expériences professionnelles et personnelles-->
             <div class="bloc">
-                <div class="experiences anim anim_3">
-                    <h1>Expérience professionnelle</h1>
-
-                    <h2>Ingénieur en Traitement du Signal à l'ENSOSP :</h2>
-                    <ul>
-                        <li>Traitement de nombreux signaux de constantes vitales</li>
-                        <li>Production de scripts Matlab et Python pour organiser
-                            et traiter les données automatiquement</li>
-                        <li>Réalisation d'un script de génération de signaux pour pallier
-                            l'absence d'une campagne de mesures</li>
-                        <li>Échange courant avec le service SSSM des pompiers de l'ENSOSP
-                            pour déterminer les axes d'amélioration du projet</li>
-                    </ul>
-
-                    <h2>Stagiaire Ingénieur en Tests Unitaires Python :</h2>
-                    <ul>
-                        <li>Apprentissage autonome des tests unitaires Python</li>
-                        <li>Production de scripts de tests unitaires pour vérifier le bon
-                            fonctionnement de la librairie PyMoDAQ lors d'une mise à jour
-                            sur GitHub</li>
-                        <li>Réalisation de fiches d'apprentissage des tests unitaires pour
-                            permettre au prochain ingénieur une adaptation rapide</li>
-                    </ul>
+                <div class="experiences anim anim_3" id="ct_expériences">
                 </div>
             </div>
 
             <!--Bloc des compétences-->
-            <div class="bloc anim anim_4">
-                <h1>Compétences techniques</h1>
-
-                <ul>
-                    <li>Traitement du Signal et de l'Image</li>
-                    <li>Classification par Machine Learning</li>
-                    <li>Matlab</li>
-                    <li>Arduino</li>
-                    <li>Git et GitHub</li>
-                    <li>Tests Unitaires</li>
-                    <li>Machine Learning</li>
-                </ul>
-
-                <h1>Langages de programmation</h1>
-
-                <ul>
-                    <li>Python</li>
-                    <li>Java</li>
-                    <li>C++</li>
-                    <li>Assembleur</li>
-                    <li>R</li>
-                    <li>VHDL</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                </ul>
+            <div class="bloc anim anim_4" id="ct_compétences">
             </div>
+
+        </div>
+
+        <div class="input" id="input">
+            <input type="email" placeholder="Votre adresse mail" class="input" id="mailInput" #mailInput required></input>
+            <br>
+            <button (click)="onSubmit(mailInput.value)" class="input_button" id="input_button">Envoyer</button>
         </div>
 
         <!--Fin contenu de la page-->
+        <script src="index.js"></script>
     </body>
 </html>
