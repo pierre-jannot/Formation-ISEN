@@ -102,7 +102,7 @@ const compétences = [
                     `Tests Unitaires`,
                     `Machine Learning`]
     }, {
-        titre: `Langages de programmation`,
+        titre: `Langages de programmation :`,
         elements: [`Python`,
                     `Java`,
                     `C++`,
@@ -125,6 +125,7 @@ affichageDynamiqueListes(experiences, ct_experiences, `h2`);
 const ct_compétences = document.getElementById("ct_compétences");
 affichageDynamiqueListes(compétences,ct_compétences,`h1`);
 
+/* Champs entrée mail avec bouton d'envoi */
 const ct_input = document.getElementById("input");
 const button = document.getElementById("input_button");
 
