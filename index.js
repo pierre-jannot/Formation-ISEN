@@ -30,12 +30,12 @@ const identité = `Pierre JANNOT`;
 document.getElementById("identité").textContent = identité;
 
 /*Image de profil*/
-const conteneur = document.getElementById("img_profil");
-const imgProfil = document.createElement("img");
+const imgProfil = document.getElementById("img_profil");
+/*const imgProfil = document.createElement("img");*/
 imgProfil.src = `./images/profil.jpg`;
 imgProfil.alt = `Photo de profil de Pierre JANNOT`;
 imgProfil.width = 100;
-conteneur.appendChild(imgProfil);
+/* conteneur.appendChild(imgProfil); */
 
 /*Statut*/
 const statut = `Ingénieur en Biotechnologies et e-Santé<br>Apprenant en 
@@ -117,13 +117,13 @@ const compétences = [
 
 const ct_experiences = document.getElementById("ct_expériences");
 
-const h1 = document.getElementById("titre_expériences");
-h1.textContent = "Expérience professionnelle";
+const h2 = document.getElementById("titre_expériences");
+h2.textContent = "Expérience professionnelle";
 
-affichageDynamiqueListes(experiences, ct_experiences, `h2`);
+affichageDynamiqueListes(experiences, ct_experiences, `h3`);
 
 const ct_compétences = document.getElementById("ct_compétences");
-affichageDynamiqueListes(compétences,ct_compétences,`h1`);
+affichageDynamiqueListes(compétences,ct_compétences,`h2`);
 
 /* Champs entrée mail avec bouton d'envoi */
 const ct_input = document.getElementById("input");
