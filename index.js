@@ -45,7 +45,7 @@ document.getElementById("statut").innerHTML = statut;
 /*Parcours*/
 const parcours = [`Issu d'une classe préparatoire au Lycée Rouvière et de 
 l'école d'ingénieur ESIEE Paris, je me suis formé dans le domaine de la 
-Biotechnologie et de l'e-Santé en vue d'améliorer la prise encharge de 
+Biotechnologie et de l'e-Santé en vue d'améliorer la prise en charge de 
 patients dans le milieu médical.`,`Cette formation m'a permis d'obtenir 
 des compétences dans la programmation Python, R, Java et C++ ainsi que le 
 traitement du signal et de l'image avec Matlab. Suite à cette formation, 
@@ -64,7 +64,7 @@ parcours.forEach(parcours => {
     ct_parcours.appendChild(p);
 });
 
-/*Séparation des expériences en listes et affichage dynamique*/
+/*Séparation des expériences en listes et affichage dynamique pour un ajout plus facile d'éléments*/
 const experiences = [
     {
         titre: `Ingénieur Traitement du Signal - ENSOSP :`,
@@ -78,7 +78,7 @@ const experiences = [
                             pour déterminer les axes d'amélioration du projet`
                         ]
         }, {
-            titre: `Stagiaire Ingénieur en Tests Unitaires Python :`,
+            titre: `Stagiaire Ingénieur Tests Unitaires Python :`,
             elements: [
                 `Apprentissage autonome des tests unitaires Python`,
                 `Production de scripts de tests unitaires pour vérifier le bon
@@ -91,6 +91,7 @@ const experiences = [
         }
     ];
 
+/*Séparation des compétences en listes et affichage dynamique pour un ajout plus facile d'éléments*/
 const compétences = [
     {
         titre: `Compétences Techniques :`,
@@ -116,9 +117,8 @@ const compétences = [
 
 const ct_experiences = document.getElementById("ct_expériences");
 
-const h1 = document.createElement("h1");
+const h1 = document.getElementById("titre_expériences");
 h1.textContent = "Expérience professionnelle";
-ct_experiences.appendChild(h1);
 
 affichageDynamiqueListes(experiences, ct_experiences, `h2`);
 
@@ -131,8 +131,10 @@ const button = document.getElementById("input_button");
 
 let mail = "";
 
+/* Vérification que le texte entré correspond bien à une adresse mail */
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+/* Message de confirmation ou d'erreur selon la valeur soumise par l'utilisateur */
 button.addEventListener("click", () => {
     mail = document.getElementById("mailInput").value;
     if (mail && emailPattern.test(mail)) {

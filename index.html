@@ -15,46 +15,42 @@
     </head>
 
     <body>
-        <div class="presentation">
-            <div class="bloc anim anim_1">
+        <header class="anim anim_1">
 
-                <!--Photo de profil-->
-                <div class="head_conteneur">
-                    <div class="photo" id="img_profil">
-                    </div>
-
-                    <!--Nom Prénom-->
-                    <header id="identité"></header>
+            <!--Photo de profil-->
+            <div class="head_conteneur">
+                <div class="photo" id="img_profil">
                 </div>
 
-                <!--Statut-->
-                <h3 id="statut"></h3>                   
+                <!--Nom Prénom-->
+                <div class="identité" id="identité"></div>
             </div>
+
+            <!--Statut-->
+            <h3 id="statut"></h3>                   
 
             <!--Parcours-->
-            <div class="parcours anim anim_2" id="parcours">
-            </div>
-        </div>
+            <section class="parcours anim anim_2" id="parcours"></section>
+        </header>
 
-        <div class="conteneur">
+        <main class="conteneur">
 
             <!--Bloc des expériences professionnelles et personnelles-->
-            <div class="bloc">
-                <div class="experiences anim anim_3" id="ct_expériences">
-                </div>
-            </div>
+            <section class="experiences anim anim_3" id="ct_expériences">
+                <h1 id="titre_expériences"></h1>
+            </section>
 
             <!--Bloc des compétences-->
-            <div class="bloc anim anim_4" id="ct_compétences">
-            </div>
+            <section class="compétences anim anim_4" id="ct_compétences">
+            </section>
 
-        </div>
+        </main>
 
-        <div class="input" id="input">
+        <footer class="input" id="input">
             <input type="email" placeholder="Votre adresse mail" class="input" id="mailInput" #mailInput required></input>
             <br>
-            <button (click)="onSubmit(mailInput.value)" class="input_button" id="input_button">Envoyer</button>
-        </div>
+            <button class="input_button" id="input_button">Envoyer</button>
+        </footer>
 
         <!--Fin contenu de la page-->
         <script src="index.js"></script>

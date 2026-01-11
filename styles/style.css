@@ -1,18 +1,13 @@
 /* Document style pour la page index.html */
 
 /* Mise en forme des titres et paragraphes */
-head, body{
+header, body{
     font-family: "Ubuntu", sans-serif;
     font-style: normal;
 }
 
-header {
-    font-weight: 700;
-    text-align: left;
-    font-size: 40px;
-    padding-top: 50px;
-    padding-bottom: 20px;
-    color: #2C7057;
+header{
+    padding-top: 20px;
 }
 
 h1, h3 {
@@ -112,6 +107,15 @@ body{
     border: 6px solid #2C7057;
 }
 
+.identité{
+    font-weight: 700;
+    text-align: left;
+    font-size: 40px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    color: #2C7057;
+}
+
 /* Correction du gap blanc sous la photo */
 .photo img{
     display: block;
@@ -138,11 +142,6 @@ body{
     }
 }
 
-/* Classe bloc permettant de réunir des éléments dans une même case de la grille des conteneurs */
-.bloc{
-    margin: 0 0;
-}
-
 /* Input au bas de la page, prend toute la largeur */
 .input{
     grid-column: 1 / -1;
@@ -158,7 +157,7 @@ body{
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    margin-left: 20px;
+    margin-bottom: auto;
 }
 
 /* Changement de couleur des titres 1 dans expériences */
