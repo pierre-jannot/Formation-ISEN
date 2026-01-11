@@ -1,5 +1,9 @@
 /* Document style pour la page index.html */
 
+:root{
+    --content-width: clamp(600px, 100%, 1200px);
+}
+
 /* Mise en forme des titres et paragraphes */
 header, body{
     font-family: "Ubuntu", sans-serif;
@@ -42,9 +46,9 @@ ul{
     transform: translateY(0)}
 }
 
-@keyframes fadeInX {
-    to {opacity: 1;
-    transform: translateX(0)}
+/* Animation de fondu */
+@keyframes fadeIn {
+    to {opacity: 1;}
 }
 
 body.visible{
@@ -68,23 +72,37 @@ body.visible{
 }
 
 .anim_3{
-    opacity: 0;
-    animation: fadeInX 1s forwards;
-    transform: translateX(20px);
-    animation-delay: 1s;
-}
-
-.anim_4{
-    opacity: 0;
-    animation: fadeInX 1s forwards;
-    transform: translateX(20px);
+    animation: fadeIn 1s forwards;
     animation-delay: 1.5s;
 }
 
+.anim_4{
+    animation: fadeIn 1s forwards;
+    animation-delay: 1.5s;
+}
+
+.anim_expe{
+    width:auto;
+    background-color: #2C7057;
+    border-radius: 12px;
+    transition: background-color 0.6s ease;
+    padding: 1px;
+}
+
+.anim_expe:hover{
+    cursor: pointer;
+    background-color: #245c48;
+}
+
 body{
-    margin: 0 auto;
-    max-width: 1100px;
-    min-width: 600px;
+    width: var(--content-width);
+    margin-left: calc((100vw - var(--content-width)) / 2);
+    margin-right: calc((100vw - var(--content-width)) / 2);
+    transition: margin-left 0.3s ease, margin-right 0.3s ease;
+}
+
+body.shifted {
+    margin: 8px 30px;
 }
 
 /* Mise en forme de la partie présentation (conteneur de tête et parcours) */
@@ -116,11 +134,7 @@ body{
     color: #2C7057;
 }
 
-.statut{
-    font-weight: 500;
-    color:#2C7057;
-}
-
+/* Justification du texte de parcours */
 .parcours{
     text-align: justify;
 }
@@ -169,7 +183,26 @@ body{
     color: white;
 }
 
-.input{
-    max-width: 1200px;
-    align-content: center;
+/* Mise en page de contact */
+.contact{
+    margin: 0%;
+}
+
+/* Mise en forme du side panel */
+.side_panel{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 650px;
+    height: 100vh;
+    background-color: #2C7057;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.3);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+/* Animation d'activation du side panel */
+.side_panel.active {
+  transform: translateX(0);
 }

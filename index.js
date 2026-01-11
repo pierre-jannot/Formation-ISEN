@@ -1,7 +1,11 @@
 /*Fonction d'affichage dynamique des listes avec choix du type pour le titre*/
-function affichageDynamiqueListes(contenu, conteneur, type) {
+function affichageDynamiqueListes(contenu, conteneur, type, classe="") {
 
     contenu.forEach(contenu => {
+        const section = document.createElement("section");
+        if (classe){
+            section.classList.add("anim_expe");
+        }
         const h = document.createElement(type);
         h.textContent = contenu.titre;
         const ul = document.createElement("ul");
@@ -11,12 +15,16 @@ function affichageDynamiqueListes(contenu, conteneur, type) {
             li.textContent = element;
             ul.appendChild(li);
         });
+        section.appendChild(h);
+        section.appendChild(ul);
 
-        conteneur.appendChild(h);
-        conteneur.appendChild(ul);
+        conteneur.appendChild(section);
 
-        h.addEventListener("click", () => {
-            ul.style.display = (ul.style.display === "none" || ul.style.display === "") ? "block" : "none";
+        section.addEventListener("click", () => {
+            const panel = document.getElementById("side_panel");
+            panel.classList.toggle("active");
+            const body = document.getElementById("body");
+            body.classList.toggle("shifted");
         });
     });
 }
@@ -91,6 +99,14 @@ const experiences = [
         }
     ];
 
+const ct_experiences = document.getElementById("ct_expériences");
+
+const h2 = document.getElementById("titre_expériences");
+h2.textContent = "Expérience professionnelle";
+
+affichageDynamiqueListes(experiences, ct_experiences, `h3`, "anim_expe");
+
+
 /*Séparation des compétences en listes et affichage dynamique pour un ajout plus facile d'éléments*/
 const compétences = [
     {
@@ -115,18 +131,13 @@ const compétences = [
     }
 ]
 
-const ct_experiences = document.getElementById("ct_expériences");
-
-const h2 = document.getElementById("titre_expériences");
-h2.textContent = "Expérience professionnelle";
-
-affichageDynamiqueListes(experiences, ct_experiences, `h3`);
-
 const ct_compétences = document.getElementById("ct_compétences");
 affichageDynamiqueListes(compétences,ct_compétences,`h2`);
 
+const ct_contact = document.getElementById("contact");
+ct_contact.textContent = "Contact";
+
 /* Champs entrée mail avec bouton d'envoi */
-const ct_input = document.getElementById("input");
 const button = document.getElementById("input_button");
 
 let mail = "";
