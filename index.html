@@ -21,12 +21,13 @@
             <section class="head_conteneur">
                 <img class="photo" id="img_profil"></img>
 
-                <!--Nom Prénom-->
-                <h1 class="identité" id="identité"></h1>
-            </section>
-
-            <!--Statut-->
-            <h2 id="statut"></h2>                   
+                <section>
+                    <!--Nom Prénom-->
+                    <h1 class="identité" id="identité"></h1>
+                    <!--Statut-->
+                    <h2 id="statut"></h2> 
+                </section>
+            </section>                  
 
             <!--Parcours-->
             <section class="parcours anim anim_2" id="parcours"></section>
@@ -45,7 +46,23 @@
 
         </main>
 
-        <footer class="input" id="input">
+        <!--Side Panel-->
+        <aside class="side_panel" id="side_panel">
+            <section class="sp_section">
+                <!--Contenu du side panel emploi ENSOSP-->
+                <h2 id="sp_h2"></h2>
+                <h3 id="sp_h3"></h3>
+                <img class="img_ensosp" id="img_ensosp"></img>
+                <p id="sp_contexte"></p>
+                <p id="sp_travail"></p>
+                <section class="isafe">
+                    <img class="isafe_img" id="isafe_img_1"></img>
+                    <img class="isafe_img" id="isafe_img_2"></img>
+                </section>
+            </section>
+        </aside>
+
+        <footer class="input anim anim_5" id="input">
             <h2 class="contact" id="contact"></h2>
             <input type="email" placeholder="Votre adresse mail" class="input" id="mailInput" #mailInput required></input>
             <br>
@@ -56,5 +73,5 @@
         <script src="index.js"></script>
     </body>
 
-    <aside class="side_panel" id="side_panel"></aside>
+    
 </html>

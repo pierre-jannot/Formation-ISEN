@@ -10,10 +10,6 @@ header, body{
     font-style: normal;
 }
 
-header{
-    padding-top: 20px;
-}
-
 h1 {
     font-weight: 700;
     text-align: left;
@@ -68,17 +64,22 @@ body.visible{
 .anim_2{
     animation: fadeInY 1s forwards;
     transform: translateY(20px);
-    animation-delay: 0.5s;
+    animation-delay: 0.3s;
 }
 
 .anim_3{
     animation: fadeIn 1s forwards;
-    animation-delay: 1.5s;
+    animation-delay: 1s;
 }
 
 .anim_4{
     animation: fadeIn 1s forwards;
-    animation-delay: 1.5s;
+    animation-delay: 1s;
+}
+
+.anim_5{
+    animation: fadeIn 1s forwards;
+    animation-delay: 1.3s;
 }
 
 .anim_expe{
@@ -116,9 +117,8 @@ body.shifted {
 .head_conteneur{
     display: grid;
     grid-template-columns: 1fr 3fr;
-    margin: 0 0;
-    gap: 30px;
-    width: 500px;
+    margin: auto auto;
+    width: 700px;
 }
 
 /* Mise en forme de la photo */
@@ -130,13 +130,20 @@ body.shifted {
 
 /* Mise en forme nom et prénom */
 .identité{
-    padding-top: 20px;
     color: #2C7057;
+    margin-bottom: 0px;
+}
+
+/* Mise en forme du statut */
+.statut{
+    margin-top: 0px;
 }
 
 /* Justification du texte de parcours */
 .parcours{
     text-align: justify;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 /* Mise en forme du conteneur général, permet l'affichage en grille */
@@ -149,14 +156,21 @@ body.shifted {
     padding: 20px;
 }
 
+/* Mise en forme responsive pour les écrans plus petits */
 @media (max-width: 1000px){
     .conteneur{
         display: flex;
         display: grid;
         grid-template-columns: 1fr;
-        width: 600px;
-        margin: 0 0;
+        width: 80vw;
+        margin: auto auto;
         gap: 30px;
+    }
+    .body.shifted {
+        width: var(--content-width);
+        margin-left: calc((100vw - var(--content-width)) / 2);
+        margin-right: calc((100vw - var(--content-width)) / 2);
+        transition: margin-left 0.3s ease, margin-right 0.3s ease;
     }
 }
 
@@ -207,6 +221,49 @@ body.shifted {
   transform: translateX(0);
 }
 
+.side_panel h2 {
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    text-align: center;
+}
+
+.side_panel h3 {
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.side_panel p {
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: justify;
+}
+
+/* Mise en forme du contenu du side panel */
+.img_ensosp {
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 12px;
+}
+
+.isafe{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.isafe_img {
+    display: block;
+    margin: 10px auto;
+    border: 3px solid #ffffff;
+    border-radius: 20px;
+    height: 300px;
+}
+
+/* Classe pour cacher des éléments */
 .hidden {
     display: none;
 }

@@ -44,7 +44,7 @@ const imgProfil = document.getElementById("img_profil");
 /*const imgProfil = document.createElement("img");*/
 imgProfil.src = `./images/profil.jpg`;
 imgProfil.alt = `Photo de profil de Pierre JANNOT`;
-imgProfil.width = 100;
+imgProfil.width = 120;
 /* conteneur.appendChild(imgProfil); */
 
 /*Statut*/
@@ -75,7 +75,7 @@ parcours.forEach(parcours => {
 });
 
 /*Séparation des expériences en listes et affichage dynamique pour un ajout plus facile d'éléments*/
-const experiences = [
+const experience_ENSOSP = [
     {
         titre: `Ingénieur Traitement du Signal - ENSOSP :`,
         elements: [
@@ -87,7 +87,11 @@ const experiences = [
             `Échange courant avec le service SSSM des pompiers de l'ENSOSP
                             pour déterminer les axes d'amélioration du projet`
                         ]
-        }, {
+        }
+    ];
+
+const experience_CEMES = [
+    {
             titre: `Stagiaire Ingénieur Tests Unitaires Python :`,
             elements: [
                 `Apprentissage autonome des tests unitaires Python`,
@@ -106,8 +110,40 @@ const ct_experiences = document.getElementById("ct_expériences");
 const h2 = document.getElementById("titre_expériences");
 h2.textContent = "Expérience professionnelle";
 
-affichageDynamiqueListes(experiences, ct_experiences, `h3`, "anim_expe", true);
+affichageDynamiqueListes(experience_ENSOSP, ct_experiences, `h3`, "anim_expe", true);
+affichageDynamiqueListes(experience_CEMES, ct_experiences, `h3`, "", false);
 
+/*Contenu du side panel*/
+/*Titre*/
+const sp_h2 = document.getElementById("sp_h2");
+sp_h2.textContent = `Ingénieur Traitement du Signal - ENSOSP`;
+/*Dates*/
+const sp_h3 = document.getElementById("sp_h3");
+sp_h3.textContent = "Janvier 2023 - Août 2023";
+/*Logo*/
+const img_ensosp = document.getElementById("img_ensosp");
+img_ensosp.src = "images/ensosp.png";
+img_ensosp.alt = "Logo de l'ENSOSP";
+img_ensosp.width = 300;
+/*Contexte et travail*/
+const sp_contexte = document.getElementById("sp_contexte");
+sp_contexte.textContent = `Mon emploi au sein de l'ENSOSP avait pour objectif de développer le projet iSafe, visant à produire un outil 
+                    de mesure des constantes vitales des personnes accidentées de la route. L'affichage de leurs constantes 
+                    ainsi que de leur état de santé permettrait une prise en charge plus rapide par les primo-intervenants et un 
+                    déplacement vers un centre hospitalier adapté à leur état. Cet emploi fait suite à mon stage de fin d'études réalisé au 
+                    Laboratoire de Biomécanique Appliquée de Marseille en tant qu'Ingénieur en Traitement du Signal sur le même projet.`
+const sp_travail = document.getElementById("sp_travail");
+sp_travail.textContent = `Lors de ces deux expériences, j'ai travaillé sur les bracelets Empatica E4 et Empatica EmbracePlus, qui permettent 
+                    de collecter des données physiologiques telles que l'onde de pouls, la température cutanée, la conductance de la peau et 
+                    possède aussi un accéléromètre 3D. J'ai réalisé de nombreux scripts permettant de traiter les données brutes issues de ces 
+                    capteurs, d'extraire des informations pertinentes telles que la fréquences et la variabilité cardiaque, la fréquence 
+                    respiratoire, le niveau de stress, la position de la personne mesurée et de détecter des événements spécifiques tels que 
+                    les chocs, les chutes ou les mouvements réalisés.`
+/*Images iSafe*/
+const isafe_img_1 = document.getElementById("isafe_img_1");
+isafe_img_1.src = "images/affichage_isafe_1.png";
+const isafe_img_2 = document.getElementById("isafe_img_2");
+isafe_img_2.src = "images/affichage_isafe_2.png";
 
 /*Séparation des compétences en listes et affichage dynamique pour un ajout plus facile d'éléments*/
 const compétences = [
