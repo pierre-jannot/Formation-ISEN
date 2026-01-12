@@ -4,7 +4,7 @@ function affichageDynamiqueListes(contenu, conteneur, type, classe="", side_pane
     contenu.forEach(contenu => {
         const section = document.createElement("section");
         if (classe){
-            section.classList.add("anim_expe");
+            section.classList.add(classe);
         }
         const h = document.createElement(type);
         h.textContent = contenu.titre;
@@ -156,4 +156,21 @@ button.addEventListener("click", () => {
     } else {
         alert("Veuillez entrer une adresse mail valide.");
     }
+});
+
+/* Filtrage des compétences */
+const experiences_filter = document.getElementById('experiences_filter');
+const items = document.querySelectorAll('.experiences li');
+
+experiences_filter.addEventListener('input', () => {
+    const filterValue = experiences_filter.value.toLowerCase();
+
+    items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(filterValue)) {
+            item.classList.remove('hidden');
+        } else {
+            item.classList.add('hidden');
+        }
+    });
 });

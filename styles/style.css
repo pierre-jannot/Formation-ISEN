@@ -206,3 +206,7 @@ body.shifted {
 .side_panel.active {
   transform: translateX(0);
 }
+
+.hidden {
+    display: none;
+}
