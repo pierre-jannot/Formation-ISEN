@@ -1,5 +1,5 @@
 /*Fonction d'affichage dynamique des listes avec choix du type pour le titre*/
-function affichageDynamiqueListes(contenu, conteneur, type, classe="") {
+function affichageDynamiqueListes(contenu, conteneur, type, classe="", side_panel=false) {
 
     contenu.forEach(contenu => {
         const section = document.createElement("section");
@@ -20,12 +20,14 @@ function affichageDynamiqueListes(contenu, conteneur, type, classe="") {
 
         conteneur.appendChild(section);
 
-        section.addEventListener("click", () => {
-            const panel = document.getElementById("side_panel");
-            panel.classList.toggle("active");
-            const body = document.getElementById("body");
-            body.classList.toggle("shifted");
-        });
+        if (side_panel){
+            section.addEventListener("click", () => {
+                const panel = document.getElementById("side_panel");
+                panel.classList.toggle("active");
+                const body = document.getElementById("body");
+                body.classList.toggle("shifted");
+            });
+        }
     });
 }
 
@@ -104,7 +106,7 @@ const ct_experiences = document.getElementById("ct_expériences");
 const h2 = document.getElementById("titre_expériences");
 h2.textContent = "Expérience professionnelle";
 
-affichageDynamiqueListes(experiences, ct_experiences, `h3`, "anim_expe");
+affichageDynamiqueListes(experiences, ct_experiences, `h3`, "anim_expe", true);
 
 
 /*Séparation des compétences en listes et affichage dynamique pour un ajout plus facile d'éléments*/
