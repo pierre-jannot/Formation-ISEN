@@ -1,11 +1,13 @@
 /*Fonction d'affichage dynamique des listes avec choix du type pour le titre*/
-function affichageDynamiqueListes(contenu, conteneur, type, classe="", side_panel=false) {
+function affichageDynamiqueListes(contenu, conteneur, marqueur="") {
 
     contenu.forEach(contenu => {
         const section = document.createElement("section");
-        if (classe){
-            section.classList.add(classe);
+        if (marqueur){
+            section.classList.add(marqueur);
+            section.setAttribute("id", marqueur);
         }
+        const type = contenu.type;
         const h = document.createElement(type);
         h.textContent = contenu.titre;
         const ul = document.createElement("ul");
@@ -19,15 +21,6 @@ function affichageDynamiqueListes(contenu, conteneur, type, classe="", side_pane
         section.appendChild(ul);
 
         conteneur.appendChild(section);
-
-        if (side_panel){
-            section.addEventListener("click", () => {
-                const panel = document.getElementById("side_panel");
-                panel.classList.toggle("active");
-                const body = document.getElementById("body");
-                body.classList.toggle("shifted");
-            });
-        }
     });
 }
 
@@ -77,6 +70,7 @@ parcours.forEach(parcours => {
 /*Séparation des expériences en listes et affichage dynamique pour un ajout plus facile d'éléments*/
 const experience_ENSOSP = [
     {
+        type: `h3`,
         titre: `Ingénieur Traitement du Signal - ENSOSP :`,
         elements: [
             `Traitement de nombreux signaux de constantes vitales`,
@@ -92,15 +86,16 @@ const experience_ENSOSP = [
 
 const experience_CEMES = [
     {
-            titre: `Stagiaire Ingénieur Tests Unitaires Python :`,
-            elements: [
-                `Apprentissage autonome des tests unitaires Python`,
-                `Production de scripts de tests unitaires pour vérifier le bon
-                            fonctionnement de la librairie PyMoDAQ lors d'une mise à jour
-                            sur GitHub`,
-                `Réalisation de fiches d'apprentissage des tests unitaires pour
-                            permettre au prochain ingénieur une adaptation rapide`
-                        ]
+        type: `h3`,
+        titre: `Stagiaire Ingénieur Tests Unitaires Python :`,
+        elements: [
+            `Apprentissage autonome des tests unitaires Python`,
+            `Production de scripts de tests unitaires pour vérifier le bon
+                        fonctionnement de la librairie PyMoDAQ lors d'une mise à jour
+                        sur GitHub`,
+            `Réalisation de fiches d'apprentissage des tests unitaires pour
+                        permettre au prochain ingénieur une adaptation rapide`
+                    ]
 
         }
     ];
@@ -110,8 +105,18 @@ const ct_experiences = document.getElementById("ct_expériences");
 const h2 = document.getElementById("titre_expériences");
 h2.textContent = "Expérience professionnelle";
 
-affichageDynamiqueListes(experience_ENSOSP, ct_experiences, `h3`, "anim_expe", true);
-affichageDynamiqueListes(experience_CEMES, ct_experiences, `h3`, "", false);
+affichageDynamiqueListes(experience_ENSOSP, ct_experiences, "anim_expe");
+
+/*Ajout d'un évènement au clic pour ouvrir/fermer le side panel*/
+const anim_expe = document.getElementById("anim_expe");
+anim_expe.addEventListener("click", () => {
+    const panel = document.getElementById("side_panel");
+    panel.classList.toggle("active");
+    const body = document.getElementById("body");
+    body.classList.toggle("shifted");
+});
+
+affichageDynamiqueListes(experience_CEMES, ct_experiences);
 
 /*Contenu du side panel*/
 /*Titre*/
@@ -148,6 +153,7 @@ isafe_img_2.src = "images/affichage_isafe_2.png";
 /*Séparation des compétences en listes et affichage dynamique pour un ajout plus facile d'éléments*/
 const compétences = [
     {
+        type: `h2`,
         titre: `Compétences Techniques :`,
         elements: [`Traitement du Signal et de l'Image`,
                     `Classification par Machine Learning`,
@@ -157,6 +163,7 @@ const compétences = [
                     `Tests Unitaires`,
                     `Machine Learning`]
     }, {
+        type: `h2`,
         titre: `Langages de programmation :`,
         elements: [`Python`,
                     `Java`,
@@ -170,7 +177,7 @@ const compétences = [
 ]
 
 const ct_compétences = document.getElementById("ct_compétences");
-affichageDynamiqueListes(compétences,ct_compétences,`h2`);
+affichageDynamiqueListes(compétences,ct_compétences);
 
 const ct_contact = document.getElementById("contact");
 ct_contact.textContent = "Contact";
